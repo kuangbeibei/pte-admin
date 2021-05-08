@@ -1,7 +1,7 @@
 const utils = require('./utils');
 
 const BasicConfig = {
-    entry: utils.ResolvePath('index'),
+    entry: utils.ResolvePath('src/index'),
     output: {
         filename: 'bundle.js',
         path: utils.ResolvePath('dist')
@@ -14,7 +14,10 @@ const BasicConfig = {
         }],
     },
     resolve: {
-        extensions: ['.tsx', '.ts'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js'],
+        alias: {
+            Typings: utils.ResolvePath('src/typings')
+        }
     },
 }
 

@@ -7,6 +7,10 @@ const utils = require('./utils');
 
 module.exports = merge(BaseConfig, {
     mode: 'development',
+    devtool: "source-map",
+    devServer: {
+        historyApiFallback: true,
+    },
     plugins: [
         new HtmlWebpakPlugin({
             template: utils.ResolvePath('public/index.html')
