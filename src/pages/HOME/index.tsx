@@ -47,7 +47,6 @@ const Home: FC<{}> = () => {
                         <Link
                             style={{
                                 color: "#fff",
-                                textDecoration: "none",
                             }}
                             to={`/${element.toLowerCase()}`}
                         >
