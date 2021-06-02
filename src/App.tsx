@@ -4,6 +4,7 @@ import { Route as RouteType } from "Typings/route";
 import routes from "./route";
 import { Search, Header } from "./components";
 import "./style/reset.scss";
+import "./style/index.css";
 
 const App: FC<{}> = () => {
     return (
