@@ -1,7 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
+import { Record } from '../../components';
 
-const Recording: FC<{}> = () => {
-    return <div></div>;
-};
+const RaItem: FC<{}> = () => <Record />;
 
-export default Recording;
+export default RaItem;
