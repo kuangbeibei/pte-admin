@@ -29,6 +29,9 @@ const BasicConfig = {
             Typings: utils.ResolvePath('src/typings')
         }
     },
+    externals: {
+        Recorder: 'recorder.js'
+    }
 }
 
 module.exports = BasicConfig;

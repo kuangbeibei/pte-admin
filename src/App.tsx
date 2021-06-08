@@ -4,24 +4,24 @@ import { Route as RouteType } from 'Typings/route';
 import routes from './route';
 import { Search, Header } from './components';
 import './style/reset.scss';
-import './style/index.css';
 
 const App: FC<{}> = () => {
+	const renderRoutes = () =>
+		routes &&
+		routes.map((r: RouteType) => (
+			<Route
+				exact={r.isExact}
+				path={r.path}
+				key={r.key}
+				component={r.component}
+			/>
+		));
+	console.log('renderRoutes', renderRoutes());
 	return (
 		<Router>
 			<Header />
 			<Search />
-			<Switch>
-				{routes &&
-					routes.map((r: RouteType) => (
-						<Route
-							exact={r.isExact}
-							path={r.path}
-							key={r.key}
-							component={r.component}
-						/>
-					))}
-			</Switch>
+			<Switch>{renderRoutes()}</Switch>
 		</Router>
 	);
 };

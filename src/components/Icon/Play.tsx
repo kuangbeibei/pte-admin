@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
-const Play = () => (
-	<IconButton aria-label="pause">
+const Play: FC<{
+	clickFn: Function;
+}> = ({ clickFn }) => (
+	<IconButton aria-label="play" onClick={(e) => clickFn(e)}>
 		<SvgIcon>
 			<g>
 				<rect fill="none" height="24" width="24" />
