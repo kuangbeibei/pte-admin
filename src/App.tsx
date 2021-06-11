@@ -6,22 +6,21 @@ import { Search, Header } from './components';
 import './style/reset.scss';
 
 const App: FC<{}> = () => {
-	const renderRoutes = () =>
-		routes &&
-		routes.map((r: RouteType) => (
-			<Route
-				exact={r.isExact}
-				path={r.path}
-				key={r.key}
-				component={r.component}
-			/>
-		));
-	console.log('renderRoutes', renderRoutes());
 	return (
 		<Router>
 			<Header />
 			<Search />
-			<Switch>{renderRoutes()}</Switch>
+			<Switch>
+				{routes &&
+					routes.map((r: RouteType) => (
+						<Route
+							exact={r.isExact}
+							path={r.path}
+							key={r.key}
+							component={r.component}
+						/>
+					))}
+			</Switch>
 		</Router>
 	);
 };

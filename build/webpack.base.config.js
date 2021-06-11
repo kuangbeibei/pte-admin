@@ -4,7 +4,8 @@ const BasicConfig = {
     entry: utils.ResolvePath('src/index'),
     output: {
         filename: 'bundle.js',
-        path: utils.ResolvePath('dist')
+        path: utils.ResolvePath('dist'),
+        publicPath: '/' // 配置publicPath的重要性！
     },
     module: {
         rules: [{
@@ -29,9 +30,6 @@ const BasicConfig = {
             Typings: utils.ResolvePath('src/typings')
         }
     },
-    externals: {
-        Recorder: 'recorder.js'
-    }
 }
 
 module.exports = BasicConfig;
